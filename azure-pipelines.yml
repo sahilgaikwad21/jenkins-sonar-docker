@@ -17,3 +17,7 @@ steps:
     repository: 'jofin/ngnix'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
+
+- task: CmdLine@2
+  inputs:
+    script: 'docker run -p 80:80 -d jofin/nginx:$(Build.BuildId)'
