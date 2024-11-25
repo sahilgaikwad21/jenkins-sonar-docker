@@ -11,6 +11,9 @@ pool:
 
 steps:
 
-- task: CmdLine@2
+- task: Docker@2
   inputs:
-    script: 'docker ps'
+    containerRegistry: 'docker-hub-connection'
+    repository: 'ngnix'
+    command: 'buildAndPush'
+    Dockerfile: '**/Dockerfile'
