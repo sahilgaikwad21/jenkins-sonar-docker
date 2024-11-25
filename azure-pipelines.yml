@@ -11,9 +11,6 @@ pool:
 
 steps:
 
-- task: Docker@2
+- task: CmdLine@2
   inputs:
-    command: 'buildAndPush'
-    Dockerfile: '**/Dockerfile'
-    repository: test
-    tags: 1
+    script: 'docker ps'
